@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event Listener Example</title>
+  </head>
+  <body>
+    <div>Hover over me!</div>
+
+    <script>
+      // Get the div element in the DOM
+      const div = document.querySelector('div')
+
+      // Define the function to be called when the div is hovered over
+      function handleHover() {
+        console.log('The div was hovered over!')
+      }
+
+      // Add the event listener to the div
+      div.addEventListener('mouseover', handleHover)
+    </script>
+  </body>
+</html>

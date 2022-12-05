@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event Listener Example</title>
+  </head>
+  <body>
+    <button>Click me!</button>
+
+    <script>
+      // Get the button element in the DOM
+      const button = document.querySelector('button')
+
+      // Define the function to be called when the button is clicked
+      function handleClick() {
+        console.log('The button was clicked!')
+        alert('The button was clicked!')
+      }
+
+      // Add the event listener to the button
+      button.addEventListener('click', handleClick)
+    </script>
+  </body>
+</html>
