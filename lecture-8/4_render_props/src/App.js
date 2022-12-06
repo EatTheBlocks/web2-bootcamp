@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class MyComponent extends React.Component {
+  state = {
+    data: null,
+  }
+
+  componentDidMount() {
+    // Fetch some data here and update state with the result
+    this.setState({ data: 'Example data' })
+  }
+
+  render() {
+    return this.props.render(this.state.data)
+  }
 }
 
-export default App;
+class App extends React.Component {
+  render() {
+    return (
+      <MyComponent
+        render={(data) => <div>{data ? <p>{data}</p> : <p>Loading...</p>}</div>}
+      />
+    )
+  }
+}
+
+export default App
